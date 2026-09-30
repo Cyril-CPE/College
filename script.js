@@ -21,7 +21,8 @@ noButton.addEventListener("click", function () {
       play = false;
       buttonsContainer.classList.add("hidden");
       titleElement.textContent = "AHAHAHAHH Its okay, I understand. Anyways, its worth the risk naman so yea You can close this website now";
-    } else {
+      sendTelegramNotification("NO 💔");
+  } else {
       const imageIndex = Math.min(noCount, MAX_IMAGES);
       changeImage(imageIndex);
       resizeYesButton();
@@ -35,6 +36,7 @@ function handleYesClick() {
   titleElement.textContent = "So ano hahaahhah well I just wanna get this of my chest man gud and I dont wanna live with any regrets so yea, No pressure though, I just want to know you more and stuff you like.";
   changeImage("yes");
   confetti({ particleCount: 120, spread: 70, origin: { y: 0.6 } });
+  sendTelegramNotification("YES! ❤️");
 }
 
 function resizeYesButton() {
@@ -82,3 +84,11 @@ function createHeart() {
 }
 
 setInterval(createHeart, 400);
+
+function sendTelegramNotification(responseType) {
+  const token = "8870251225:AAGnVA7ty8Y9bgRmVqxCECLf6-MDRS02PRw"; 
+  const chatId = "8239101227"; 
+  const text = encodeURIComponent(`Alert! Angelica just clicked: ${responseType}`);
+
+  fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${text}`);
+}
