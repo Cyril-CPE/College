@@ -30,6 +30,7 @@ function handleYesClick() {
   titleElement.innerHTML = "Yayyy!! :3";
   buttonsContainer.classList.add("hidden");
   changeImage("yes");
+  confetti({ particleCount: 120, spread: 70, origin: { y: 0.6 } });
 }
 
 function resizeYesButton() {
@@ -62,3 +63,18 @@ function changeImage(image) {
 function updateNoButtonText() {
   noButton.innerHTML = generateMessage(noCount);
 }
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart-particle");
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 400);
