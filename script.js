@@ -13,20 +13,19 @@ let noCount = 0;
 
 yesButton.addEventListener("click", handleYesClick);
 
-noButton.addEventListener("click", handleNoClick);
-function handleNoClick() {
-  noCount++;
-
-  if (noCount >= 6) {
-    buttonsContainer.classList.add("hidden");
-    titleElement.innerHTML = "AHAHAHAHH Its okay, I understand, You can close this website now";
-    changeImage("sad");
-  } else {
+noButton.addEventListener("click", function () {
+  if (play) {
+    noCount++;
+    const imageIndex = Math.min(noCount, MAX_IMAGES);
+    changeImage(imageIndex);
     resizeYesButton();
     updateNoButtonText();
-    changeImage(noCount);
+    if (noCount === MAX_IMAGES) {
+      play = false;
+      buttonsContainer.classList.add("hidden");
+      titleElement.innerHTML = "AHAHAHAHH Its okay, I understand, You can close this website now";
+    }
   }
-}
 });
 
 function handleYesClick() {
