@@ -17,7 +17,7 @@ noButton.addEventListener("click", handleNoClick);
 function handleNoClick() {
   noCount++;
   
-  const totalMessages = 6;
+  const totalMessages = 5;
 
   if (noCount >= totalMessages) {
     buttonsContainer.classList.add("hidden");
