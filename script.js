@@ -16,10 +16,8 @@ yesButton.addEventListener("click", handleYesClick);
 noButton.addEventListener("click", handleNoClick);
 function handleNoClick() {
   noCount++;
-  
-  const totalMessages = 5;
 
-  if (noCount >= totalMessages) {
+  if (noCount >= 6) {
     buttonsContainer.classList.add("hidden");
     titleElement.innerHTML = "AHAHAHAHH Its okay, I understand, You can close this website now";
     changeImage("sad");
