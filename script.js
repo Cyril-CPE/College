@@ -23,7 +23,7 @@ noButton.addEventListener("click", function () {
     if (noCount === MAX_IMAGES) {
       play = false;
       buttonsContainer.classList.add("hidden");
-      titleElement.innerHTML = "AHAHAHAHH Its okay, I understand, You can close this website now";
+      titleElement.innerHTML = "AHAHAHAHH Its okay, I understand. Anyways, its worth the risk naman so yea You can close this website now";
     }
   }
 });
