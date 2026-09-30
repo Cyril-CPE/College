@@ -30,8 +30,8 @@ noButton.addEventListener("click", function () {
 });
 
 function handleYesClick() {
-  titleElement.innerHTML = "Yayyy HAHAHAHAHAH!! :3";
   buttonsContainer.classList.add("hidden");
+  titleElement.textContent = "So ano hahaahhah well I just wanna get this of my chest man gud and I dont wanna live with any regrets so yea, No pressure though, I just want to know you more and stuff you like.";
   changeImage("yes");
   confetti({ particleCount: 120, spread: 70, origin: { y: 0.6 } });
 }
