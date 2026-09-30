@@ -69,3 +69,21 @@ body {
 .hidden {
   display: none;
 }
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0;
+  }
+
+.heart-particle {
+  position: fixed;
+  bottom: -10px;
+  font-size: 24px;
+  pointer-events: none;
+  animation: float 4s linear infinite;
+  z-index: 0;
+}
