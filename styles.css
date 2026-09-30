@@ -9,7 +9,8 @@ html {
 }
 
 body {
-  background-color: #fff0f6;
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);
+  min-height: 100vh;
   font-family: "Protest Riot", sans-serif;
 }
 
