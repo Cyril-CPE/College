@@ -13,21 +13,26 @@ let noCount = 0;
 
 yesButton.addEventListener("click", handleYesClick);
 
-noButton.addEventListener("click", function () {
-  if (play) {
-    noCount++;
-    const imageIndex = Math.min(noCount, MAX_IMAGES);
-    changeImage(imageIndex);
+noButton.addEventListener("click", handleNoClick);
+function handleNoClick() {
+  noCount++;
+  
+  const totalMessages = 6;
+
+  if (noCount >= totalMessages) {
+    buttonsContainer.classList.add("hidden");
+    titleElement.innerHTML = "AHAHAHAHH Its okay, I understand, You can close this website now";
+    changeImage("sad");
+  } else {
     resizeYesButton();
     updateNoButtonText();
-    if (noCount === MAX_IMAGES) {
-      play = false;
-    }
+    changeImage(noCount);
   }
+}
 });
 
 function handleYesClick() {
-  titleElement.innerHTML = "Yayyy!! :3";
+  titleElement.innerHTML = "Yayyy HAHAHAHAHAH!! :3";
   buttonsContainer.classList.add("hidden");
   changeImage("yes");
   confetti({ particleCount: 120, spread: 70, origin: { y: 0.6 } });
