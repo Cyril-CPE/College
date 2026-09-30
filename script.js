@@ -11,6 +11,7 @@ const MAX_IMAGES = 5;
 let play = true;
 let noCount = 0;
 
+// Line 14 should look EXACTLY like this:
 yesButton.addEventListener("click", handleYesClick);
 
 noButton.addEventListener("click", function () {
