@@ -12,6 +12,7 @@ body {
   background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);
   min-height: 100vh;
   font-family: "Protest Riot", sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -81,9 +82,9 @@ body {
 
 .heart-particle {
   position: fixed;
-  bottom: -10px;
+  bottom: -20px;
   font-size: 24px;
   pointer-events: none;
   animation: float 4s linear infinite;
-  z-index: 0;
+  z-index: 9999;
 }
