@@ -16,14 +16,16 @@ yesButton.addEventListener("click", handleYesClick);
 noButton.addEventListener("click", function () {
   if (play) {
     noCount++;
-    const imageIndex = Math.min(noCount, MAX_IMAGES);
-    changeImage(imageIndex);
-    resizeYesButton();
-    updateNoButtonText();
-    if (noCount === MAX_IMAGES) {
+    if (noCount > MAX_IMAGES) {
       play = false;
       buttonsContainer.classList.add("hidden");
       titleElement.innerHTML = "AHAHAHAHH Its okay, I understand. Anyways, its worth the risk naman so yea You can close this website now";
+      changeImage("sad");
+    } else {
+      const imageIndex = Math.min(noCount, MAX_IMAGES);
+      changeImage(imageIndex);
+      resizeYesButton();
+      updateNoButtonText();
     }
   }
 });
