@@ -20,9 +20,17 @@ noButton.addEventListener("click", function () {
     if (noCount > MAX_IMAGES) {
       play = false;
       buttonsContainer.classList.add("hidden");
-      titleElement.textContent = "AHAHAHAHH Its okay, I understand. Anyways, its worth the risk naman so yea You can close this website now";
+      
+      titleElement.innerHTML = `
+        AHAHAHAHH Its okay, I understand. Anyways, its worth the risk naman so yea You can close this website now
+        <div id="feedback-container" style="margin-top: 20px;">
+          <input type="text" id="user-message-input" placeholder="Leave a message here..." style="padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc; width: 80%; max-width: 300px; font-size: 14px;">
+          <button id="send-msg-btn" onclick="sendCustomMessage()" style="padding: 8px 14px; border-radius: 8px; border: none; background-color: #ff4d6d; color: white; cursor: pointer; font-size: 14px; margin-left: 6px;">Send</button>
+        </div>
+      `;
+
       sendTelegramNotification("NO 💔");
-  } else {
+    } else {
       const imageIndex = Math.min(noCount, MAX_IMAGES);
       changeImage(imageIndex);
       resizeYesButton();
@@ -33,10 +41,18 @@ noButton.addEventListener("click", function () {
 
 function handleYesClick() {
   buttonsContainer.classList.add("hidden");
-  titleElement.textContent = "So ano hahaahhah well I just wanna get this of my chest man gud and I dont wanna live with any regrets so yea, No pressure though, I just want to know you more and stuff you like.";
+  
+  titleElement.innerHTML = `
+    So ano hahaahhah well I just wanna get this of my chest man gud and I dont wanna live with any regrets so yea, No pressure though, I just want to know you more and stuff you like.
+    <div id="feedback-container" style="margin-top: 20px;">
+      <input type="text" id="user-message-input" placeholder="Leave a message here..." style="padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc; width: 80%; max-width: 300px; font-size: 14px;">
+      <button id="send-msg-btn" onclick="sendCustomMessage()" style="padding: 8px 14px; border-radius: 8px; border: none; background-color: #ff4d6d; color: white; cursor: pointer; font-size: 14px; margin-left: 6px;">Send</button>
+    </div>
+  `;
+
   changeImage("yes");
   confetti({ particleCount: 120, spread: 70, origin: { y: 0.6 } });
-  sendTelegramNotification("YES! ❤️");
+  sendTelegramNotification("YES! 💗");
 }
 
 function resizeYesButton() {
@@ -91,4 +107,20 @@ function sendTelegramNotification(responseType) {
   const text = encodeURIComponent(`Alert! Angelica just clicked: ${responseType}`);
 
   fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${text}`);
+}
+
+function sendCustomMessage() {
+  const inputElement = document.getElementById("user-message-input");
+  const sendBtn = document.getElementById("send-msg-btn");
+  const userText = inputElement.value.trim();
+
+  if (userText === "") return;
+
+  sendTelegramNotification(`User Message: "${userText}"`);
+
+  inputElement.value = "";
+  inputElement.placeholder = "Message sent! Thank you ❤️";
+  inputElement.disabled = true;
+  sendBtn.disabled = true;
+  sendBtn.textContent = "Sent!";
 }
