@@ -24,7 +24,7 @@ if (noButton) {
         buttonsContainer.classList.add("hidden");
 
         titleElement.innerHTML = `
-          AHAHAHAH Its okay, I understand. Anyways, its worth the risk. If you can, can you keep this as a secret sa others😁? naman so yea You can close this website now. Thank You
+          AHAHAHAH Its okay, I understand. If you can, can you keep this as a secret sa others😁?  Anyways, its worth the risk, naman so yea You can close this website now. Thank You
           <div id="feedback-container" style="margin-top: 20px;">
             <input type="text" id="user-message-input" placeholder="Leave a message here..." style="padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc; width: 80%; max-width: 300px; font-size: 14px;">
             <button id="send-msg-btn" onclick="sendCustomMessage()" style="padding: 8px 14px; border-radius: 8px; border: none; background-color: #ff4d6d; color: white; cursor: pointer; font-size: 14px; margin-left: 6px;">Send</button>
