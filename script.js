@@ -22,32 +22,35 @@ if (manhwaForm) {
     secretStep.classList.remove("hidden");
   });
 }
-yesButton.addEventListener("click", handleYesClick);
+if (yesButton) {
+  yesButton.addEventListener("click", handleYesClick);
+}
 
-noButton.addEventListener("click", function () {
-  if (play) {
-    noCount++;
-    if (noCount > MAX_IMAGES) {
-      play = false;
-      buttonsContainer.classList.add("hidden");
-      
-      titleElement.innerHTML = `
-        AHAHAHAHH Its okay, I understand. Anyways, its worth the risk. If you can, can you keep this as a secret sa others😔? naman so yea You can close this website now. Thank You
-        <div id="feedback-container" style="margin-top: 20px;">
-          <input type="text" id="user-message-input" placeholder="Leave a message here..." style="padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc; width: 80%; max-width: 300px; font-size: 14px;">
-          <button id="send-msg-btn" onclick="sendCustomMessage()" style="padding: 8px 14px; border-radius: 8px; border: none; background-color: #ff4d6d; color: white; cursor: pointer; font-size: 14px; margin-left: 6px;">Send</button>
-        </div>
-      `;
+if (noButton) {
+  noButton.addEventListener("click", function () {
+    if (play) {
+      noCount++;
+      if (noCount > MAX_IMAGES) {
+        play = false;
+        buttonsContainer.classList.add("hidden");
 
-      sendTelegramNotification("NO 💔");
-    } else {
-      const imageIndex = Math.min(noCount, MAX_IMAGES);
-      changeImage(imageIndex);
-      resizeYesButton();
-      updateNoButtonText();
+        titleElement.innerHTML = `
+          AHAHAHAHH Its okay, I understand. Anyways, its worth the risk. If you can, can you keep this as a secret sa others😌? naman so yea You can close this website now. Thank You
+          <div id="feedback-container" style="margin-top: 20px;">
+            <input type="text" id="user-message-input" placeholder="Leave a message here..." style="padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc; width: 80%; max-width: 300px; font-size: 14px;">
+            <button id="send-msg-btn" onclick="sendCustomMessage()" style="padding: 8px 14px; border-radius: 8px; border: none; background-color: #ff4d6d; color: white; cursor: pointer; font-size: 14px; margin-left: 6px;">Send</button>
+          </div>
+        `;
+
+        sendTelegramNotification("NO 💔");
+      } else {
+        const imageIndex = Math.min(noCount, MAX_IMAGES);
+        changeImage(imageIndex);
+        resizeYesButton();
+        updateNoButtonText();
+      }
     }
-  }
-});
+  });
 
 function handleYesClick() {
   buttonsContainer.classList.add("hidden");
