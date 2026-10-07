@@ -11,22 +11,6 @@ const MAX_IMAGES = 5;
 let play = true;
 let noCount = 0;
 
-const submitBtn = document.getElementById("survey-submit-btn");
-const surveyStep = document.getElementById("survey-step");
-const secretStep = document.getElementById("secret-step");
-
-if (submitBtn) {
-  submitBtn.addEventListener("click", () => {
-    // Hide survey section
-    surveyStep.classList.add("hidden");
-    
-    // Reveal secret step section
-    secretStep.classList.remove("hidden");
-    
-    // Scroll view back to top
-    window.scrollTo(0, 0);
-  });
-}
 if (yesButton) {
   yesButton.addEventListener("click", handleYesClick);
 }
@@ -40,7 +24,7 @@ if (noButton) {
         buttonsContainer.classList.add("hidden");
 
         titleElement.innerHTML = `
-          AHAHAHAHH Its okay, I understand. Anyways, its worth the risk. If you can, can you keep this as a secret sa others😌? naman so yea You can close this website now. Thank You
+          AHAHAHAH Its okay, I understand. Anyways, its worth the risk. If you can, can you keep this as a secret sa others😁? naman so yea You can close this website now. Thank You
           <div id="feedback-container" style="margin-top: 20px;">
             <input type="text" id="user-message-input" placeholder="Leave a message here..." style="padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc; width: 80%; max-width: 300px; font-size: 14px;">
             <button id="send-msg-btn" onclick="sendCustomMessage()" style="padding: 8px 14px; border-radius: 8px; border: none; background-color: #ff4d6d; color: white; cursor: pointer; font-size: 14px; margin-left: 6px;">Send</button>
@@ -56,12 +40,13 @@ if (noButton) {
       }
     }
   });
+}
 
 function handleYesClick() {
   buttonsContainer.classList.add("hidden");
-  
+
   titleElement.innerHTML = `
-    So ano hahaahhah well I just wanna get this of my chest man gud and I dont wanna live with any regrets so yea, No pressure though, I just want to get to know you more and stuff you like😊😊. 
+    So ano hahaahhah well I just wanna get this off my chest man gud and I dont wanna live with any regrets so yea, No pressure though, I just want to get to know you more and stuff you like😁😁.
     <div id="feedback-container" style="margin-top: 20px;">
       <input type="text" id="user-message-input" placeholder="Leave a message here..." style="padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc; width: 80%; max-width: 300px; font-size: 14px;">
       <button id="send-msg-btn" onclick="sendCustomMessage()" style="padding: 8px 14px; border-radius: 8px; border: none; background-color: #ff4d6d; color: white; cursor: pointer; font-size: 14px; margin-left: 6px;">Send</button>
@@ -70,7 +55,7 @@ function handleYesClick() {
 
   changeImage("yes");
   confetti({ particleCount: 120, spread: 70, origin: { y: 0.6 } });
-  sendTelegramNotification("YES! 💗");
+  sendTelegramNotification("YES! ❤️");
 }
 
 function resizeYesButton() {
@@ -85,11 +70,10 @@ function generateMessage(noCount) {
   const messages = [
     "No",
     "Are you sure?",
-    "Roblox Angelica? HAHAHAHAAH",
+    "Roblox Angelica? HAHAHAHAH",
     "Ay legit? :(",
     "Baka naman ano lang crushback",
-    "ummmmmmmmm...",
-   
+    "ummmmmm...",
   ];
 
   const messageIndex = Math.min(noCount, messages.length - 1);
@@ -120,8 +104,8 @@ function createHeart() {
 setInterval(createHeart, 400);
 
 function sendTelegramNotification(responseType) {
-  const token = "8870251225:AAGnVA7ty8Y9bgRmVqxCECLf6-MDRS02PRw"; 
-  const chatId = "8239101227"; 
+  const token = "8870251225:AAGnVA7ty8Y9bgRmVqxCECLf6-MDRS02PRw";
+  const chatId = "8239101227";
   const text = encodeURIComponent(`Alert! Angelica just clicked: ${responseType}`);
 
   fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${text}`);
