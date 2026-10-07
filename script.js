@@ -11,19 +11,19 @@ const MAX_IMAGES = 5;
 let play = true;
 let noCount = 0;
 
- const manhwaForm = document.getElementById("manhwa-form");
+const submitBtn = document.getElementById("survey-submit-btn");
 const surveyStep = document.getElementById("survey-step");
 const secretStep = document.getElementById("secret-step");
 
-if (manhwaForm) {
-  manhwaForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    
-    // Hide survey and reveal secret cat step
+if (submitBtn) {
+  submitBtn.addEventListener("click", () => {
+    // Hide survey section
     surveyStep.classList.add("hidden");
+    
+    // Reveal secret step section
     secretStep.classList.remove("hidden");
     
-    // Reset window scroll position to top
+    // Scroll view back to top
     window.scrollTo(0, 0);
   });
 }
