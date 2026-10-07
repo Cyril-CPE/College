@@ -88,55 +88,5 @@ body {
   animation: float 4s linear infinite;
   z-index: 9999;
 }
-
-/* Survey Styles */
-.subtitle {
-  font-size: 1.4rem;
-  opacity: 0.8;
-  margin-bottom: 2rem;
-}
-
-.question {
-  margin-bottom: 2rem;
-  text-align: left;
-  width: 100%;
-}
-
-.question p {
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.rating-group {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.rating-group label {
-  font-size: 1.4rem;
-  cursor: pointer;
-}
-
-.submit-btn {
-  background-color: #ff6b81;
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-size: 1.6rem;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-
-.submit-btn:hover {
-  background-color: #ff4757;
-}
-
-textarea:focus {
-  outline: none;
-  border-color: #ff4d6d;
-}
+ 
+ 
