@@ -11,7 +11,17 @@ const MAX_IMAGES = 5;
 let play = true;
 let noCount = 0;
 
-// Line 14 should look EXACTLY like this:
+ const manhwaForm = document.getElementById("manhwa-form");
+const surveyStep = document.getElementById("survey-step");
+const secretStep = document.getElementById("secret-step");
+
+if (manhwaForm) {
+  manhwaForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    surveyStep.classList.add("hidden");
+    secretStep.classList.remove("hidden");
+  });
+}
 yesButton.addEventListener("click", handleYesClick);
 
 noButton.addEventListener("click", function () {
