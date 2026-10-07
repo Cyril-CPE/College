@@ -18,8 +18,13 @@ const secretStep = document.getElementById("secret-step");
 if (manhwaForm) {
   manhwaForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    
+    // Hide survey and reveal secret cat step
     surveyStep.classList.add("hidden");
     secretStep.classList.remove("hidden");
+    
+    // Reset window scroll position to top
+    window.scrollTo(0, 0);
   });
 }
 if (yesButton) {
