@@ -18,7 +18,6 @@ body {
 .container {
   height: 100vh;
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,6 +28,9 @@ body {
   width: 30rem;
   height: 30rem;
   margin-bottom: 2rem;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .title {
@@ -43,7 +45,6 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
   gap: 1rem;
 }
 
@@ -51,7 +52,6 @@ body {
   padding: 1.5rem 2.5rem;
   border: none;
   border-radius: 4px;
-
   color: white;
   font-size: 1.6rem;
   font-weight: 600;
@@ -67,9 +67,33 @@ body {
   background-color: #f03e3e;
 }
 
-.hidden {
-  display: none;
+/* Stage Layout & Centering Fix */
+.stage {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
 }
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Floating Hearts */
 @keyframes float {
   0% {
     transform: translateY(100vh) scale(0.5);
@@ -79,6 +103,7 @@ body {
     transform: translateY(-10vh) scale(1.2);
     opacity: 0;
   }
+}
 
 .heart-particle {
   position: fixed;
@@ -87,37 +112,4 @@ body {
   pointer-events: none;
   animation: float 4s linear infinite;
   z-index: 9999;
-}
- 
-/* Utility class to hide stages */
-.hidden {
-  display: none !important;
-}
-
-/* Optional fade-in animation for smooth transition */
-.stage {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-} 
-
-/* Center the stage container and its contents */
-.stage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-}
-
-/* Ensure the cat image stays centered */
-.cat-img {
-  display: block;
-  margin: 0 auto 1.5rem auto;
-  max-width: 100%;
-  height: auto;
 }
