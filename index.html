@@ -10,15 +10,27 @@
     <title>Survey!</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
-<body>
-    <main class="container">
-        <img class="cat-img" src="img/cat-0.jpg" alt="Picture of a cat" />
-        <p class="title">Hello Angelica. You caught my attention recently, Can I have the chance in getting to know you more?</p>
-        <div class="buttons">
-            <button type="button" class="btn btn--yes">Yes!</button>
-            <button type="button" class="btn btn--no">No :(</button>
-        </div>
-    </main>
-    <script src="script.js?v=13"></script>
+<body class="bg-pink">
+  <main class="container">
+    <!-- STAGE 1: Unsuspecting Cover -->
+    <div id="stage-1" class="stage">
+      <h1 class="survey-title">Quick Student Feedback Survey</h1>
+      <p class="survey-subtitle">Click below to proceed to the question.</p>
+      <button type="button" id="start-btn" class="btn btn--primary">Start Survey</button>
+    </div>
+
+    <!-- STAGE 2: Confession Screen (Hidden initially) -->
+    <div id="stage-2" class="stage hidden">
+      <img class="cat-img" src="img/cat-0.jpg" alt="Picture of a cat" />
+      <p class="title">Hello Angelica. You caught my attention recently, Can I have the chance in getting to know you more?</p>
+      <div class="buttons">
+        <button type="button" class="btn btn--yes" id="yes-btn">Yes!</button>
+        <button type="button" class="btn btn--no" id="no-btn">No :(</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js?v=13"></script>
 </body>
 </html>
