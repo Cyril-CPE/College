@@ -103,3 +103,21 @@ body {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 } 
+
+/* Center the stage container and its contents */
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+/* Ensure the cat image stays centered */
+.cat-img {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  max-width: 100%;
+  height: auto;
+}
