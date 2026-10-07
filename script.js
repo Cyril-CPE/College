@@ -126,17 +126,16 @@ function sendCustomMessage() {
   sendBtn.disabled = true;
   sendBtn.textContent = "Sent!";
 }
-/* Utility class to hide stages */
-.hidden {
-  display: none !important;
-}
+ // Stage Transition Handler
+document.addEventListener("DOMContentLoaded", () => {
+  const stage1 = document.getElementById("stage-1");
+  const stage2 = document.getElementById("stage-2");
+  const startBtn = document.getElementById("start-btn");
 
-/* Optional fade-in animation for smooth transition */
-.stage {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
+  if (startBtn) {
+    startBtn.addEventListener("click", () => {
+      stage1.classList.add("hidden");
+      stage2.classList.remove("hidden");
+    });
+  }
+});
