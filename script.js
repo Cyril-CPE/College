@@ -126,3 +126,17 @@ function sendCustomMessage() {
   sendBtn.disabled = true;
   sendBtn.textContent = "Sent!";
 }
+/* Utility class to hide stages */
+.hidden {
+  display: none !important;
+}
+
+/* Optional fade-in animation for smooth transition */
+.stage {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
