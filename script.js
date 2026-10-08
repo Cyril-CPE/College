@@ -72,7 +72,7 @@ function generateMessage(noCount) {
     "Are you sure?",
     "Roblox Angelica? HAHAHAHAH",
     "Ay legit? :(",
-    "Dako na kaayo button sa yes oh😥",
+    "Dako na kaayo button sa yes oh",
     "ummmmmm...",
   ];
 
