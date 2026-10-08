@@ -72,7 +72,7 @@ function generateMessage(noCount) {
     "Are you sure?",
     "Roblox Angelica? HAHAHAHAH",
     "Ay legit? :(",
-    "Baka naman ano lang crushback",
+    "Dako na kaayo button sa yes oh😥",
     "ummmmmm...",
   ];
 
