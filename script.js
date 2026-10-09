@@ -24,7 +24,7 @@ if (noButton) {
         buttonsContainer.classList.add("hidden");
 
         titleElement.innerHTML = `
-          AHAHAHAH Its okay, I understand. If you can, can you keep this as a secret sa others😁?  Anyways, its worth the risk, naman so yea You can close this website now. Thank You
+          AHAHAHAH Its okay, I understand. If you can, can you keep this as a secret sa others😁?  Anyways, its worth the risk, naman so yea You can close this website now. Thank You. Congrats sa Exam btw
           <div id="feedback-container" style="margin-top: 20px;">
             <input type="text" id="user-message-input" placeholder="Leave a message here..." style="padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc; width: 80%; max-width: 300px; font-size: 14px;">
             <button id="send-msg-btn" onclick="sendCustomMessage()" style="padding: 8px 14px; border-radius: 8px; border: none; background-color: #ff4d6d; color: white; cursor: pointer; font-size: 14px; margin-left: 6px;">Send</button>
@@ -46,7 +46,7 @@ function handleYesClick() {
   buttonsContainer.classList.add("hidden");
 
   titleElement.innerHTML = `
-    So ano hahaahhah well I just wanna get this off my chest man for a very long time and I dont wanna live with any regrets so yea. It just take this long because I need a way for confession kay medyu maulaw ko in person. No pressure though, I just want to get to know you more and stuff you like😁😁.
+    So ano hahaahhah well I just wanna get this off my chest man for a very long time and I dont wanna live with any regrets so yea. It just take this long because I need a way for confession kay medyu maulaw ko in person. No pressure though, I just want to get to know you more and stuff you like😁😁.Congrats sa Exam btw
     <div id="feedback-container" style="margin-top: 20px;">
       <input type="text" id="user-message-input" placeholder="Leave a message here..." style="padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc; width: 80%; max-width: 300px; font-size: 14px;">
       <button id="send-msg-btn" onclick="sendCustomMessage()" style="padding: 8px 14px; border-radius: 8px; border: none; background-color: #ff4d6d; color: white; cursor: pointer; font-size: 14px; margin-left: 6px;">Send</button>
